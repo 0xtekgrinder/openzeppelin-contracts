@@ -22,6 +22,11 @@ abstract contract Ownable2Step is Ownable {
     event OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner);
 
     /**
+     * @dev Initializes the contract setting the deployer as the initial owner.
+     */
+    constructor(address initialOwner) Ownable(initialOwner) {}
+
+    /**
      * @dev Returns the address of the pending owner.
      */
     function pendingOwner() public view virtual returns (address) {
